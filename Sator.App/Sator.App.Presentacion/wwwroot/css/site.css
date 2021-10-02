@@ -1,6 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -70,66 +72,15 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-/*Estilos De Daniela*/
-
-.form-login{
-  width: 400px;
-  height: 340px;
-  background-color: rgb(0, 247, 255);
-  margin: auto;
-  margin-top: 180px;
-  box-shadow: 7px 13px 37px;
-  padding: 20px 30px;
-  border-top: 4px solid blueviolet;
-  color: white;
-
-}
-
-.form-login h5{
-  margin: 0;
-  text-align: center;
-  height: 40px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid;
-  font-size: 20px;
-}
-
-.controls{
-  width: 100%;
-  border: 1px solid gold;
-  margin-bottom: 15px;
-  padding: 11px 10px;
-  background: black;
-  font-size: 14px;
-  font-weight:bold ;
-}
-
-.buttons{
-  width: 100%;
-  height: 40px;
-  background: blue;
-  border: none;
-  color: white;
-  margin-bottom: 16px;
-}
-
-.form-login p{
-  height: 40px;
-  text-align: center;
-  border-radius: 1px solid;
-}
-
-.form-login a{
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.form-login a:hover{
-  text-decoration: underline;
-}
-
 /*ESTILOS CARTA*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+
 #btn-menu {
   display: none;
 }
@@ -143,10 +94,12 @@ body {
   opacity: 0;
   visibility: hidden;
 }
-btn-menu:checked ~ .container-menu{
+
+#btn-menu:checked ~ .container-menu{
   opacity: 1;
   visibility: visible;
 }
+ 
 .cont-menu{
   width: 100%;
   max-width: 250px;
@@ -156,7 +109,8 @@ btn-menu:checked ~ .container-menu{
   transition: all 500ms ease;
   transform: translateX(-100%);
 }
-btn-menu:checked ~ .container-menu .cont-menu{
+
+#btn-menu:checked ~ .container-menu .cont-menu{
   transform: translateX(0%);
 }
 
@@ -183,4 +137,69 @@ btn-menu:checked ~ .container-menu .cont-menu{
   cursor: pointer;
   font-size: 18px;
 
+}
+
+/*
+*  MENU HORIZONTAL DASHBOARD
+*-------------------------------------------------------*/
+#wrapperMenu {
+  width: 30%;
+  margin: 20px 50px;
+}
+
+.wrappernav-dashboard {
+    /*background: #d3d3d3;*/
+    /*border: 1px dashed orange;*/
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+}
+#menu-dashboard {
+    /*border: 1px dashed red;*/
+    border-left: 1px solid #bcbcbc; 
+    border-right: 1px solid #bcbcbc;
+    border-top: 1px solid #bcbcbc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#menu-dashboard .active a {
+    background-color: #F4BD16;
+    border-radius: 0;
+    color: #fff;
+}
+#menu-dashboard li {
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #bcbcbc; 
+}
+#menu-dashboard li > a {
+    border-radius: 0;
+    padding: 10px;
+    color: #444;
+}
+#menu-dashboard > li > a:hover,
+#menu-dashboard > li > a:focus {
+    color: #fff;
+    background: #F4BD16;
+  -webkit-transition: all 1ms ease-in-out;
+-moz-transition: all 1ms ease-in-out;
+-ms-transition: all 1ms ease-in-out;
+-o-transition: all 1ms ease-in-out;
+transition: all 1ms ease-in-out;
+}
+#submenu {
+    background: #333;
+}
+#submenu li {
+    border: none;
+}
+#submenu li a {
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    text-indent: 20px;
+}
+#submenu li a:hover {
+    background: rgba(0,0,0,.5);
 }
