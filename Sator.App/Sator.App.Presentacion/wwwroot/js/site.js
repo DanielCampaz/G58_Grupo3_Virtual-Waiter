@@ -2,11 +2,3 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
-$(document).ready(function(){
-        
-    $('#submenu li a').on('click', function(e){
-       // $('#submenu').removeClass('in');
-      $('#submenu').toggleClass();
-    });
-    
- });
