@@ -134,3 +134,7 @@ body {
   cursor: pointer;
 
 }
+
+.list-ent li{
+  list-style-type: none;
+}

@@ -1,9 +1,12 @@
-﻿@page
+﻿
+@page
 @model Sator.App.Presentacion.Pages.cartaModel
 @{
 }
+
+
 <div class="btn-menu">
-	<label for="btn-menu">☰ MENU</label> 
+	<label for="btn-menu" >☰ MENU</label> 
 </div>
 
 <!----------------------->
@@ -12,9 +15,20 @@
 	<div class="cont-menu">
 		<nav>
 			<a href="#">Carta completa</a>
-			<a href="#">Entradas</a>
-			<a href="#">Bebidas</a>
-			<a href="#">Plato fuerte</a>
+			<a href="Entradas">Entradas</a>
+			<a href="Bebidas">Bebidas</a>
+			<a href="Plato_fuerte">Plato fuerte</a>
 		</nav>
 	</div>
 
+@foreach (var Producto in Model.producto_list)
+{
+	<div class="card" style="width: 18rem;">
+  	<img src="..." class="card-img-top" alt="...">
+  	<div class="card-body">
+    	<h5 class="card-title">@Producto.nombre</h5>
+		<p class="card-text">@Producto.descripcion</p>
+		<a href="#" class="btn btn-warning">Agregar</a>
+  	</div>
+</div>
+}
