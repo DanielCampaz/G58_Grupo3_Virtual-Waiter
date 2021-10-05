@@ -4,7 +4,7 @@ namespace Sator.App.Dominio.Entidades
 {
     public class Persona
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public TipoId tipoid { get; set; }
         public string nombre { get; set; }
         public string apellido { get; set; }
