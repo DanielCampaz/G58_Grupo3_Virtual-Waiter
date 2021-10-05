@@ -22,42 +22,53 @@
 
 			<div class="col-md-8 col-xs-12 col-sm-12 login_form ">
 				<div class="container-fluid">
-					<ul class="nav nav-tabs">
 
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
 						<li class="nav-item">
-							<a class="nav-link active" href="#">
+							<a class="nav-link active" id="LogIn-tab" data-toggle="tab" href="#LogIn" role="tab"
+								aria-controls="LogIn" aria-selected="true">
 								<h5>Log In</h5>
 							</a>
-							<div class="row">
+						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">
+							<a class="nav-link" id="Register-tab" data-toggle="tab" href="#Register" role="tab"
+								aria-controls="Register" aria-selected="false">
 								<h5>Register</h5>
 							</a>
 						</li>
-						<div class="row">
-							<form control="" class="form-group">
-								<div class="row">
-									<input type="text" name="username" id="username" class="form__input"
-										placeholder="Username">
-								</div>
-								<div class="row">
-									<!-- <span class="fa fa-lock"></span> -->
-									<input type="password" name="password" id="password" class="form__input"
-										placeholder="Password">
-								</div>
-								<div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-									<label class="form-check-label" for="flexSwitchCheckDefault">Remember
-										Me!</label>
-								</div>
-								<div class="row">
-									<input type="submit" value="Submit" class="btn">
-								</div>
-							</form>
+					</ul>
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="LogIn" role="tabpanel" aria-labelledby="LogIn-tab">
+							<div class="row">
+								<form control="" class="form-group">
+									<div class="row">
+										<input type="text" name="username" id="username" class="form__input"
+											placeholder="Username">
+									</div>
+									<div class="row">
+										<!-- <span class="fa fa-lock"></span> -->
+										<input type="password" name="password" id="password" class="form__input"
+											placeholder="Password">
+									</div>
+									<div class="form-check form-switch">
+										<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+										<label class="form-check-label" for="flexSwitchCheckDefault">Remember
+											Me!</label>
+									</div>
+									<div class="row">
+										<input type="submit" value="Submit" class="btn">
+									</div>
+								</form>
+							</div>
 						</div>
-						<div class="row">
-							<p>Forgot password? <a href="#">Click Here</a></p>
-						</div>
+
+						<div class="tab-pane fade" id="Register" role="tabpanel" aria-labelledby="Register-tab">...</div>
+
+					</div>
+
+
+
+
 				</div>
 			</div>
 		</div>
@@ -66,5 +77,4 @@
 
 
 
-	</ul>
 </body>
