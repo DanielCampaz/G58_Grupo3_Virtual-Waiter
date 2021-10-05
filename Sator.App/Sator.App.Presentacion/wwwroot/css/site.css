@@ -208,3 +208,7 @@ form{
 	background-color: #0c0c0c;
 	color:#fff;
 }
+
+.list-ent li{
+  list-style-type: none;
+}
