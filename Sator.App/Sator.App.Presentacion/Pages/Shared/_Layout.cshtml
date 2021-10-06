@@ -13,27 +13,30 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index"><i><img src="~/Recursos/LogoSatorNegro/LogoLogoSatorNegro.png"></img></i></a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><i><img src="/img/LogoLogoSatorNegro.png" height="30" width="30"></img></i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                    <ul class="navbar-nav ml-auto">
+                        <!--<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Loging/LogingSingin">Loging/Sing-In</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Carta/Carta">Carta</a>
                         </li>
-                        <i class="fas fa-cart-arrow-down"></i>
-                        <i class="fas fa-user-circle"></i>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Loging/LogingSingin"><i class="fas fa-cart-arrow-down"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Loging/LogingSingin"><i class="fas fa-user-circle"></i></a>
+                        </li>
+                        <!--<i class="fas fa-cart-arrow-down"></i>-->
+                        <!--<i class="fas fa-user-circle"></i>-->
                     </ul>
                 </div>
             </div>
@@ -47,7 +50,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - Sator.App.Presentacion - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            <a asp-area="" asp-page="/carta/carta">&copy; 2021 - <i><img src="/img/LogoLogoSatorNegroCafe.png" height="45" width="90"></img></i></a><!--<a asp-area="" asp-page="/Privacy">Privacy</a>-->
         </div>
     </footer>
 
