@@ -3,15 +3,14 @@
 @model Sator.App.Presentacion.Pages.cartaModel
 @{
 }
-
-
+<link rel="stylesheet" href="~/css/site.css" />
 <div class="btn-menu">
 	<label for="btn-menu" >☰ MENU</label> 
 </div>
 
 <!----------------------->
 <input type="checkbox" id="btn-menu">
-<div class="container-menu">
+<div class="container-menu" id="item">
 	<div class="cont-menu">
 		<nav>
 			<a href="#">Carta completa</a>
@@ -19,5 +18,17 @@
 			<a href="Bebidas">Bebidas</a>
 			<a href="Plato_fuerte">Plato fuerte</a>
 		</nav>
+</div>
+@for (int i = 0; i < 10; i++)
+{
+	<div class="card" style="width: 18rem;" id="item">
+		<img src="..." class="card-img-top" alt="...">
+		<div class="card-body">
+			<h5 class="card-title">Papas Fritas</h5>
+			<p class="card-text">Papas</p>
+			<p class="card-text">Queso</p>
+			<p class="card-text">Tocineta</p>
+			<a href="#" class="btn btn-warning">Agregar</a>
+		</div>
 	</div>
-
+}

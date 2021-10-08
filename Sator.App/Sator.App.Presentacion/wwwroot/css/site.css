@@ -212,3 +212,8 @@ form{
 .list-ent li{
   list-style-type: none;
 }
+
+#item{
+  float: left;
+  margin: 25px;
+}
