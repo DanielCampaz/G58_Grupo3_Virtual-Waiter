@@ -9,21 +9,21 @@ namespace Sator.App.Persistencia.AppRepositorio
     {
         private readonly AppContext _appContext;
 
-        public RepositorioProducto(AppContext appContext)
+        public RepositorioPersona(AppContext appContext)
         {
             _appContext = appContext;
         }
-        IEnumerable<Persona> GetAllPersonas()
+        IEnumerable<Persona> IRepositorioPersona.GetAllPersonas()
         {
             return _appContext.Personas;
         }
-        Persona AddPersona(Persona persona)
+        Persona IRepositorioPersona.AddPersona(Persona persona)
         {
             var personaAdicionado = _appContext.Personas.Add(persona);
             _appContext.SaveChanges();
             return personaAdicionado.Entity;
         }
-        Persona UpdatePersona(Persona persona)
+        Persona IRepositorioPersona.UpdatePersona(Persona persona)
         {
             var PersonaEncontrado = _appContext.Personas.FirstOrDefault(p => p.id == persona.id);
             if (PersonaEncontrado!= null)
@@ -41,7 +41,7 @@ namespace Sator.App.Persistencia.AppRepositorio
             }
             return PersonaEncontrado;
         }
-        void DeletePersona(int idPersona)
+        void IRepositorioPersona.DeletePersona(int idPersona)
         {
             var PersonaEncontrado = _appContext.Personas.FirstOrDefault(p => p.id == idPersona);
             if (PersonaEncontrado == null)
@@ -49,13 +49,13 @@ namespace Sator.App.Persistencia.AppRepositorio
             _appContext.Personas.Remove(PersonaEncontrado);
             _appContext.SaveChanges();
         }
-        Persona GetPersona(int idPersona)
+        Persona IRepositorioPersona.GetPersona(int idPersona)
         {
             return _appContext.Personas.FirstOrDefault(p => p.id == idPersona);
         }
-        Persona GetPersonaFEmail(string emPersona)
+        Persona IRepositorioPersona.GetPersonaFEmail(string emPersona)
         {
-            return _appContext.Personas.FirstOrDefault(p => p.emial == emPersona);
+            return _appContext.Personas.FirstOrDefault(p => p.email == emPersona);
         }
     }
 }

@@ -12,5 +12,6 @@ namespace Sator.App.Persistencia.AppRepositorio
         Persona UpdatePersona(Persona persona);
         void DeletePersona(int idPersona);    
         Persona GetPersona(int idPersona);
+        Persona GetPersonaFEmail(string emPersona);
     }
 }

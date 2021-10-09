@@ -7,7 +7,7 @@ namespace Sator.App.Persistencia.AppRepositorio
     {
       public DbSet<Producto> Productos { get; set; }
       public DbSet<Persona> Personas { get; set; }
-      public Dbset<Genero> Generos { get; set; }
+      public DbSet<Genero> Generos { get; set; }
 
       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

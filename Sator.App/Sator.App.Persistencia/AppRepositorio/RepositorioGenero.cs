@@ -9,21 +9,21 @@ namespace Sator.App.Persistencia.AppRepositorio
     {
         private readonly AppContext _appContext;
 
-        public RepositorioProducto(AppContext appContext)
+        public RepositorioGenero(AppContext appContext)
         {
             _appContext = appContext;
         }
-        IEnumerable<Genero> GetAllGeneros()
+        IEnumerable<Genero> IRepositorioGenero.GetAllGeneros()
         {
             return _appContext.Generos;
         }
-        Genero AddGenero(Genero genero)
+        Genero IRepositorioGenero.AddGenero(Genero genero)
         {
             var generoAdicionado = _appContext.Generos.Add(genero);
             _appContext.SaveChanges();
             return generoAdicionado.Entity;
         }
-        Genero UpdateGenero(Genero genero)
+        Genero IRepositorioGenero.UpdateGenero(Genero genero)
         {
             var GeneroEncontrado = _appContext.Generos.FirstOrDefault(p => p.id == genero.id);
             if (GeneroEncontrado!= null)
@@ -32,15 +32,19 @@ namespace Sator.App.Persistencia.AppRepositorio
                 GeneroEncontrado.descripcion= genero.descripcion;
                 _appContext.SaveChanges();
             }
-            return PersonaEncontrado;
+            return GeneroEncontrado;
         }
-        void DeleteGenero(int idGenero)
+        void IRepositorioGenero.DeleteGenero(int idGenero)
         {
-
+            var GeneroEncontrado = _appContext.Generos.FirstOrDefault(p => p.id == idGenero);
+            if (GeneroEncontrado == null)
+                return;
+            _appContext.Generos.Remove(GeneroEncontrado);
+            _appContext.SaveChanges();
         }    
-        Genero GetGenero(int idGenero)
+        Genero IRepositorioGenero.GetGenero(int idGenero)
         {
-
+             return _appContext.Generos.FirstOrDefault(p => p.id == idGenero);
         }
     }
 }
