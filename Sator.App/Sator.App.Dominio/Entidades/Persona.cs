@@ -1,6 +1,6 @@
 using System;
 
-namespace Sator.App.Dominio.Entidades
+namespace Sator.App.Dominio
 {
     public class Persona
     {
@@ -12,5 +12,6 @@ namespace Sator.App.Dominio.Entidades
         public Genero genero { get; set; }
         public string email { get; set; } 
         public float num_cel { get; set; }
+        public bool admin { get; set; }
     }
 }

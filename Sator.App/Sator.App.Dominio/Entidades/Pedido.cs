@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-namespace Sator.App.Dominio.Entidades
+namespace Sator.App.Dominio
 {
     public class Pedido
     {
         public int id { get; set; }
-        public List<Orden> producto { get; set; }    
+        public List<Orden> orden { get; set; }    
         public Persona cliente { get; set; }
         public DateTime fecha { get; set; }
         public DateTime horapedido { get; set; }
@@ -15,18 +15,18 @@ namespace Sator.App.Dominio.Entidades
         public Persona empleasdo { get; set; }
         public FormaPago formapago { get; set; }
 
-        /*public float Pagar()
+        public float Pagar()
         {
             float totalpedido = 0;
 
-            foreach (var item in producto)
+            foreach (var producto in orden)
             {
-                float costoProducto = item.CalcularCosto;
+                float costoProducto = producto.CalcularCosto();
                 totalpedido = totalpedido + costoProducto;     
             }
 
             return totalpedido;
-        }*/
+        }
 
         public void Facturar()
         {

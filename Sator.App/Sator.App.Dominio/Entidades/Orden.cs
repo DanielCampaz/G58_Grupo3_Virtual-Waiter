@@ -1,9 +1,10 @@
 using System;
 
-namespace Sator.App.Dominio.Entidades
+namespace Sator.App.Dominio
 {
     public class Orden: ProductoTamano
     {
+        public int id { get; set; }
         public int cantidad { get; set; }
 
         public Orden(int cantidad, ProductoTamano ptamano)

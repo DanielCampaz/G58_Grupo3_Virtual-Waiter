@@ -1,6 +1,6 @@
 using System;
 
-namespace Sator.App.Dominio.Entidades
+namespace Sator.App.Dominio
 {
     public class Sucursal
     {
