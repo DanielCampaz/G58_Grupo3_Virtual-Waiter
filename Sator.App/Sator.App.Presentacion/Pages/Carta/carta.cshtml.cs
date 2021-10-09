@@ -5,38 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using Sator.App.Dominio;
+
 namespace Sator.App.Presentacion.Pages
 {
     public class cartaModel : PageModel
     {
-        //public List<Producto> producto_list{ get; set; }
+        public IEnumerable<Producto> producto_list { get; set; }
+
+        public cartaModel()
+        {
+            producto_list = new List<Producto>(){
+                new Producto{id=1, nombre="Papas Fritas", descripcion="Papas con tocineta y queso", tipoproducto= new TipoProducto{id=1, descripcion="Entrada"}, ingrediente= new List<Ingrediente>(){new Ingrediente{id=1, descripcion="Papa", cantidad=1}, new Ingrediente{id=2, descripcion="Queso", cantidad=1}, new Ingrediente{id=3, descripcion="Tocineta", cantidad=1}}},
+                new Producto{id=2, nombre="Gratinado", descripcion="Maiz con queso tocineta", tipoproducto= new TipoProducto{id=2, descripcion="Entrada"}, ingrediente= new List<Ingrediente>(){new Ingrediente{id=4, descripcion="Queso", cantidad=1}, new Ingrediente{id=5, descripcion="Tocineta", cantidad=1}, new Ingrediente{id=6, descripcion="Maiz", cantidad=1}}},
+                new Producto{id=3, nombre="Aros de cebolla", descripcion="Cebolla con queso frita", tipoproducto= new TipoProducto{id=3, descripcion="Entrada"}, ingrediente= new List<Ingrediente>(){new Ingrediente{id=7, descripcion="Cebolla", cantidad=1}, new Ingrediente{id=8, descripcion="Queso", cantidad=1}}}
+            };
+        }
 
         public void OnGet()
         {
-            //Llenarlista();
         }
-       /*public void Llenarlista()
-        {
-            for (var i = 0; i < 10; i++)
-            {
-                producto_list.Add(new Producto(i, "Papas a la francesa","The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested."));
-            }
-        }*/
 
     }
 }
-
-
-/*
-@foreach (var Producto in Model.producto_list)
-{
-	<div class="card" style="width: 18rem;">
-  	<img src="..." class="card-img-top" alt="...">
-  	<div class="card-body">
-    	<h5 class="card-title">@Producto.nombre</h5>
-		<p class="card-text">@Producto.descripcion</p>
-		<a href="#" class="btn btn-warning">Agregar</a>
-  	</div>
-</div>
-}
-*/
