@@ -13,5 +13,6 @@ namespace Sator.App.Dominio
         public string email { get; set; } 
         public float num_cel { get; set; }
         public bool admin { get; set; }
+        public string contrasena { get; set; }
     }
 }
