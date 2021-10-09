@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Sator.App.Presentacion.Pages
+namespace Sator.App.Presentacion
 {
-    public class EntradasModel : PageModel
+    public class VentanaModel : PageModel
     {
         public void OnGet()
         {

@@ -4,21 +4,6 @@
 @{
 }
 <link rel="stylesheet" href="~/css/site.css" />
-<div class="btn-menu">
-	<label for="btn-menu" >☰ MENU</label> 
-</div>
-
-<!----------------------->
-<input type="checkbox" id="btn-menu">
-<div class="container-menu" id="item">
-	<div class="cont-menu">
-		<nav>
-			<a href="#">Carta completa</a>
-			<a href="Entradas">Entradas</a>
-			<a href="Bebidas">Bebidas</a>
-			<a href="Plato_fuerte">Plato fuerte</a>
-		</nav>
-</div>
 @for (int i = 0; i < 10; i++)
 {
 	<div class="card" style="width: 18rem;" id="item">
@@ -28,7 +13,40 @@
 			<p class="card-text">Papas</p>
 			<p class="card-text">Queso</p>
 			<p class="card-text">Tocineta</p>
-			<a href="#" class="btn btn-warning">Agregar</a>
+			<a href="exampleModal" class="btn btn-warning btn-lg" data-toggle="modal" >Agregar</a>
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							...
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+						</div>
+					</div>
+					</div>
+
 		</div>
 	</div>
 }
+
+<!--
+<div class="modal">
+  <div class="modal-content">
+    <div class="line"></div>
+    <h2>Agregar producto</h2>
+	<button class="car-add" type="button">Agregar</button>
+	<button class="car-cancel" type="button">Cancelar</button>
+	<button class="car-follow" type="button">Seguir comprando</button>
+	<div class="line"></div>
+  </div>
+</div>
+-->
+<!--<button data-bs-target="#ventanamodal" type="button" class="btn btn-primary" data-toggle="modal">AGREGAR</button>-->
+     		<!--<input type="button" value="Agregar" class="btn-Abrir">-->

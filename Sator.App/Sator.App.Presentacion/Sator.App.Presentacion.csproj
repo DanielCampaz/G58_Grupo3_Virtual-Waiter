@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Sator.App.Persistencia\Sator.App.Persistencia.csproj" />
+    <ProjectReference Include="..\Sator.App.Dominio\Sator.App.Dominio.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
