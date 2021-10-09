@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using Sator.App.Dominio.Entidades;
+using Sator.App.Dominio;
 using Sator.App.Persistencia.AppRepositorio;
 
 namespace Sator.App.Persistencia.AppRepositorio
@@ -30,7 +30,7 @@ namespace Sator.App.Persistencia.AppRepositorio
             if (ProductoEncontrado!= null)
             {
                 ProductoEncontrado.descripcion= producto.descripcion;
-                ProductoEncontrado.nombre          = producto.nombre;
+                ProductoEncontrado.nombre= producto.nombre;
                 _appContext.SaveChanges();
             }
             return ProductoEncontrado;

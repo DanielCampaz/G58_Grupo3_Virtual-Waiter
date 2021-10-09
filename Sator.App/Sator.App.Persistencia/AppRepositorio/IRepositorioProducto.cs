@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Sator.App.Dominio.Entidades;
+using Sator.App.Dominio;
 
 namespace Sator.App.Persistencia.AppRepositorio
 {
@@ -12,6 +12,5 @@ namespace Sator.App.Persistencia.AppRepositorio
         Producto UpdateProducto(Producto producto);
         void DeleteProducto(int idProducto);    
         Producto GetProducto(int idProducto);
-
     }
 }
