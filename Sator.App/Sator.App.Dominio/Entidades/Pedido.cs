@@ -12,7 +12,7 @@ namespace Sator.App.Dominio
         public DateTime horapedido { get; set; }
         public DateTime horaentrega { get; set; }
         public TipoPedido tipo { get; set; }
-        public Persona empleasdo { get; set; }
+        public Persona empleado { get; set; }
         public FormaPago formapago { get; set; }
 
         public float Pagar()
