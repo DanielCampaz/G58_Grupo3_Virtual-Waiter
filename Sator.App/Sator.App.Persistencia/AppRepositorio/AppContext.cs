@@ -8,7 +8,10 @@ namespace Sator.App.Persistencia.AppRepositorio
       public DbSet<Producto> Productos { get; set; }
       public DbSet<Persona> Personas { get; set; }
       public DbSet<Genero> Generos { get; set; }
-
+      public DbSet<Carta> Cartas { get; set; } 
+      public DbSet<FormaPago> FormaPagos { get; set; }
+      public DbSet<Ingrediente> Ingredientes { get; set; }
+      
       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
