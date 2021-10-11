@@ -25,7 +25,7 @@ namespace Sator.App.Persistencia
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder
-               .UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog =SatorBD");
+               .UseSqlServer("Server=localhost; Database=DESARROLLO; user id=sa; password=daniel2008b; Initial Catalog = SatorDb");
             }
         }   
     }
