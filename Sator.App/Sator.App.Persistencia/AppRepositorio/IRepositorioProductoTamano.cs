@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sator.App.Dominio;
 
-namespace Sator.App.Persistencia.AppRepositorio
+namespace Sator.App.Persistencia
 {
     public interface IRepositorioProductoTamano
     {

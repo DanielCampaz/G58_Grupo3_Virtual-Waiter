@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Sator.App.Dominio;
 
-namespace Sator.App.Persistencia.AppRepositorio
+namespace Sator.App.Persistencia
 {
     public class AppContext : DbContext
     {

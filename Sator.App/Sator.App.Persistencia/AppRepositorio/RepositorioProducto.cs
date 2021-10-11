@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sator.App.Dominio;
-using Sator.App.Persistencia.AppRepositorio;
+using Sator.App.Persistencia;
 
-namespace Sator.App.Persistencia.AppRepositorio
+namespace Sator.App.Persistencia
 {
     public class RepositorioProducto: IRepositorioProducto
     {

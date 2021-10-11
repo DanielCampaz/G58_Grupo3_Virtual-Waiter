@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 
+using System.Collections.Generic;
 namespace Sator.App.Dominio
 {
     public class Producto

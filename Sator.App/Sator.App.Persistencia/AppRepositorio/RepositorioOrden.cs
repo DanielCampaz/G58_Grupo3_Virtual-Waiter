@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Sator.App.Dominio;
-using Sator.App.Persistencia.AppRepositorio;
+using Sator.App.Persistencia;
 
-namespace Sator.App.Persistencia.AppRepositorio
+namespace Sator.App.Persistencia
 {
     public class RepositorioOrden: IRepositorioOrden
     {
@@ -30,7 +30,6 @@ namespace Sator.App.Persistencia.AppRepositorio
             if (OrdenEncontrado!= null)
             {
                 OrdenEncontrado.cantidad= orden.cantidad;
-                /*OrdenEncontrado.ptamano= orden.ptamano;*/ /*En esta parte tengo una pregunta, como sta heredando de producto tamaño pero en cantidad como se pondria?*/
                 _appContext.SaveChanges();
             }
             return OrdenEncontrado;
