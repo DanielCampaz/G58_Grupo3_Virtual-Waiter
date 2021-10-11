@@ -15,7 +15,10 @@ namespace Sator.App.Persistencia.AppRepositorio
       public DbSet<Pedido> Pedidos {get; set; }
       public DbSet<Tamano> Tamanos {get; set; }
       public DbSet<TipoPedido> TipoPedidos {get; set; }
-
+      public DbSet<ProductoTamano> ProductosTamanos { get; set; }
+      public DbSet<Sucursal> Sucursales { get; set; }
+      public DbSet<TipoId> TiposIds { get; set; }
+      public DbSet<TipoProducto> TiposProductos { get; set; }
       
       protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
