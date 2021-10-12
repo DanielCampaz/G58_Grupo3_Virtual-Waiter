@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Sator.App.Dominio;
+using Sator.App.Persistencia;
+
 namespace Sator.App.Presentacion
 {
     public class Startup
@@ -24,6 +27,7 @@ namespace Sator.App.Presentacion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            //services.AddSingleton<IRepositorioCarta, IRepositorioFormaPago, IRepositorioGenero, IRepositorioIngrediente, IRepositorioOrden, IRepositorioPedido, IRepositorioPersona, IRepositorioProducto, IRepositorioProductoTamano, IRepositorioSucursal, IRepositorioTamano, IRepositorioTipoId, IRepositorioTipoPedido, IRepositorioTipoProducto, RepositorioCarta, RepositorioFormaPago, RepositorioGenero, RepositorioIngrediente, RepositorioOrden, RepositorioPedido, RepositorioPersona, RepositorioProducto, RepositorioProductoTamano, RepositorioSucursal, RepositorioTamano, RepositorioTipoId, RepositorioTipoPedido, RepositorioTipoProducto>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
