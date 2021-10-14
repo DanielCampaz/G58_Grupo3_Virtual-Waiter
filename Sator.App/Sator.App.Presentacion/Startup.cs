@@ -27,7 +27,8 @@ namespace Sator.App.Presentacion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            //services.AddSingleton<IRepositorioCarta, IRepositorioFormaPago, IRepositorioGenero, IRepositorioIngrediente, IRepositorioOrden, IRepositorioPedido, IRepositorioPersona, IRepositorioProducto, IRepositorioProductoTamano, IRepositorioSucursal, IRepositorioTamano, IRepositorioTipoId, IRepositorioTipoPedido, IRepositorioTipoProducto, RepositorioCarta, RepositorioFormaPago, RepositorioGenero, RepositorioIngrediente, RepositorioOrden, RepositorioPedido, RepositorioPersona, RepositorioProducto, RepositorioProductoTamano, RepositorioSucursal, RepositorioTamano, RepositorioTipoId, RepositorioTipoPedido, RepositorioTipoProducto>();
+            /*services.AddScoped<IRepositorioCarta, IRepositorioFormaPago, IRepositorioGenero, IRepositorioIngrediente, IRepositorioOrden, IRepositorioPedido, IRepositorioPersona, IRepositorioProducto, IRepositorioProductoTamano, IRepositorioSucursal, IRepositorioTamano, IRepositorioTipoId, IRepositorioTipoPedido, IRepositorioTipoProducto, RepositorioCarta, RepositorioFormaPago, RepositorioGenero, RepositorioIngrediente, RepositorioOrden, RepositorioPedido, RepositorioPersona, RepositorioProducto, RepositorioProductoTamano, RepositorioSucursal, RepositorioTamano, RepositorioTipoId, RepositorioTipoPedido, RepositorioTipoProducto>();
+            services.AddSingleton<Sator.App.Persistencia.AppContext>();*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

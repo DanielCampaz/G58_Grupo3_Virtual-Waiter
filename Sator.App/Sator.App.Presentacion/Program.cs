@@ -7,6 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
+using Sator.App.Dominio;
+using Sator.App.Persistencia;
+
 namespace Sator.App.Presentacion
 {
     public class Program

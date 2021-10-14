@@ -9,13 +9,15 @@ namespace Sator.App.Consola
     class Program
     {
         private static IRepositorioGenero _repoGenero = new RepositorioGenero (new Persistencia.AppContext());
+        private static IRepositorioIngrediente _repoIngrediente = new RepositorioIngrediente (new Persistencia.AppContext());
         
         private static IEnumerable<Genero> generos { get; set; }
+        private static IEnumerable<Ingrediente> ingredientes { get; set; }
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            AddGenero();
+            ListIngrediente();
         }
         private static void AddGenero(){
             var genero = new Genero
@@ -32,6 +34,20 @@ namespace Sator.App.Consola
                 Console.WriteLine(item.abreviatura);
                 Console.WriteLine(item.descripcion);
             }
+        }
+        private static void ListIngrediente(){
+            ingredientes = _repoIngrediente.GetAllIngredientes();
+            if (ingredientes != null)
+            {
+                foreach (var item in ingredientes)
+                {
+                    Console.WriteLine(item.descripcion);
+                    Console.WriteLine(item.cantidad);
+                }    
+            }else{
+                Console.WriteLine("No hay Ingredientes");
+            }
+            
         }
         private static Genero traGenero(){
             Genero generoEn = _repoGenero.GetGenero(1);
