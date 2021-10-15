@@ -19,7 +19,8 @@ namespace Sator.App.Presentacion.Pages
 
         public Persona persona { get; set; }
         public string confContra { get; set; }
-        public Loggin log { get; set; }
+        public string log_contrasena { get; set; }
+        public string log_email { get; set; }
 
         public LogingSinginModel(ILogger<LogingSinginModel> logger)
         {
@@ -40,24 +41,20 @@ namespace Sator.App.Presentacion.Pages
             if (persona.nombre != null)
             {
                 _repoPersona.AddPersona(persona);
+                return Page();
             }
-            if (log.correo)
+            if (log_email!=null)
             {
-                Persona perso = _repoPersona.GetPersonaFEmail(log.correo);
+                Persona perso = _repoPersona.GetPersonaFEmail(log_email);
                 if (perso!=null)
                 {
-                    if (perso.contrasena == log.contrasena)
+                    if (perso.contrasena == log_contrasena)
                     {
                         return RedirectToPage("../Index");
                     }
                 }
             }
+            return Page();
         }
-    }
-
-    class Loggin
-    {
-        public string contasena { get; set; }
-        public string correo { get; set; }
     }
 }
