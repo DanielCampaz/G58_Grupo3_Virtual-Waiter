@@ -40,15 +40,19 @@
 					<div class="tab-content" id="myTabContent">
 						<div class="tab-pane fade show active" id="LogIn" role="tabpanel" aria-labelledby="LogIn-tab">
 							<div class="row">
-								<form control="" class="form-group">
+								<form method="post" class="form-group">
 									<div class="row">
-										<input type="text" name="Email" id="Email" class="form__input"
+										<label asp-for="log.correo" for="formGroupExampleInput"></label>
+										<input asp-for="log.correo" type="text" name="Email" id="Email" class="form__input"
 											placeholder="Email">
+										<span class="text-danger" asp-validation-for="log.correo"></span>
 									</div>
 									<div class="row">
 										<!-- <span class="fa fa-lock"></span> -->
-										<input type="password" name="password" id="password" class="form__input"
+										<label asp-for="log.contrasena" for="formGroupExampleInput"></label>
+										<input asp-for="log.contrasena"password" name="password" id="password" class="form__input"
 											placeholder="Password">
+										<span class="text-danger" asp-validation-for="log.contrasena"></span>
 									</div>
 									<div class="form-check form-switch">
 										<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
@@ -63,42 +67,52 @@
 						</div>
 
 						<div class="tab-pane fade" id="SignUp" role="tabpanel" aria-labelledby="SignUp-tab">
-							<form>
+							<form method = "post">
 								<div class="form-group">
-									<label for="formGroupExampleInput">First Name</label>
-									<input type="text" class="form-control" id="formGroupExampleInput"
+									<label asp-for="persona.nombre" for="formGroupExampleInput">Nombre</label>
+									<input asp-for="persona.nombre" type="text" class="form-control" id="formGroupExampleInput"
 										placeholder="Carlos">
+									<span class="text-danger" asp-validation-for="persona.nombre"></span>
 								</div>
 								<div class="form-group">
-									<label for="formGroupExampleInput2">Last Name</label>
-									<input type="text" class="form-control" id="formGroupExampleInput2"
+									<label asp-for="persona.apellido"for="formGroupExampleInput2">Apellido</label>
+									<input asp-for="persona.apellido" type="text" class="form-control" id="formGroupExampleInput2"
 										placeholder="Perez">
+									<span class="text-danger" asp-validation-for="persona.apellido"></span>
 								</div>
 
 								<div class="form-group">
-									<label for="formGroupExampleInput4">Number Phone</label>
-									<input type="text" class="form-control" id="formGroupExampleInput4"
+									<label asp-for="persona.num_cel" for="formGroupExampleInput4">Numero Telefono</label>
+									<input asp-for="persona.num_cel" type="text" class="form-control" id="formGroupExampleInput4"
 										placeholder="1234567890">
+									<span class="text-danger" asp-validation-for="persona.num_cel"></span>
 								</div>
 
 								<div class="form-group">
-									<label for="exampleFormControlInput1">Email Address</label>
-									<input type="email" class="form-control" id="exampleFormControlInput1"
+									<label asp-for="persona.email" for="exampleFormControlInput1">Correo</label>
+									<input asp-for="persona.email" type="email" class="form-control" id="exampleFormControlInput1"
 										placeholder="name@example.com">
+									<span class="text-danger" asp-validation-for="persona.email"></span>
 								</div>
 
 								<div class="form-group">
-									<label for="inputPassword">Password</label>
-									<input type="password" class="form-control" id="inputPassword"
+									<label asp-for="persona.contrasena" for="inputPassword">Contraseña</label>
+									<input asp-for="persona.contrasena" type="password" class="form-control" id="inputPassword"
 										placeholder="Password">
+									<span class="text-danger" asp-validation-for="persona.contrasena"></span>
 								</div>
 
 								<div class="form-group">
-									<label for="inputPasswordcomf">Password Confirmation</label>
-									<input type="password" class="form-control" id="inputPasswordcomf"
+									<label asp-for= "confContra" for="inputPasswordcomf">Confirmar Contraseña</label>
+									<input asp-for="confContra" type="password" class="form-control" id="inputPasswordcomf"
 										placeholder="Password">
+									<span class="text-danger" asp-validation-for="confContra"></span>
 								</div>
-
+								<div class="form-check form-switch">
+										<input asp-for="persona.admin" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+										<label asp-for="persona.admin"class="form-check-label" for="flexSwitchCheckDefault">Admin</label>
+										<span class="text-danger" asp-validation-for="persona.admin"></span>
+								</div>
 								<div class="row">
 									<input type="submit" value="Register" class="btn">
 								</div>

@@ -27,8 +27,21 @@ namespace Sator.App.Presentacion
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            /*services.AddScoped<IRepositorioCarta, IRepositorioFormaPago, IRepositorioGenero, IRepositorioIngrediente, IRepositorioOrden, IRepositorioPedido, IRepositorioPersona, IRepositorioProducto, IRepositorioProductoTamano, IRepositorioSucursal, IRepositorioTamano, IRepositorioTipoId, IRepositorioTipoPedido, IRepositorioTipoProducto, RepositorioCarta, RepositorioFormaPago, RepositorioGenero, RepositorioIngrediente, RepositorioOrden, RepositorioPedido, RepositorioPersona, RepositorioProducto, RepositorioProductoTamano, RepositorioSucursal, RepositorioTamano, RepositorioTipoId, RepositorioTipoPedido, RepositorioTipoProducto>();
-            services.AddSingleton<Sator.App.Persistencia.AppContext>();*/
+            services.AddScoped<IRepositorioCarta,RepositorioCarta>();
+            services.AddScoped<IRepositorioFormaPago,RepositorioFormaPago>();
+            services.AddScoped<IRepositorioGenero, RepositorioGenero>();
+            services.AddScoped<IRepositorioIngrediente, RepositorioIngrediente>();
+            services.AddScoped<IRepositorioOrden, RepositorioOrden>();
+            services.AddScoped<IRepositorioPedido, RepositorioPedido>();
+            services.AddScoped<IRepositorioPersona, RepositorioPersona>();
+            services.AddScoped<IRepositorioProducto, RepositorioProducto>();
+            services.AddScoped<IRepositorioProductoTamano, RepositorioProductoTamano>();
+            services.AddScoped<IRepositorioSucursal, RepositorioSucursal>();
+            services.AddScoped<IRepositorioTamano, RepositorioTamano>();
+            services.AddScoped<IRepositorioTipoId, RepositorioTipoId>();
+            services.AddScoped<IRepositorioTipoPedido, RepositorioTipoPedido>();
+            services.AddScoped<IRepositorioTipoProducto, RepositorioTipoProducto>();
+            services.AddSingleton<Sator.App.Persistencia.AppContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,47 +12,56 @@ namespace Sator.App.Presentacion.Pages
 {
     public class cartaModel : PageModel
     {
-        private static IRepositorioProducto _repoProducto = new RepositorioProducto (new Persistencia.AppContext());
-        private static IRepositorioIngrediente _repoIngrediente = new RepositorioIngrediente (new Persistencia.AppContext());
+        private readonly IRepositorioProducto _repoProducto;
+        private readonly IRepositorioIngrediente _repoIngrediente;
 
         public IEnumerable<Producto> producto_list { get; set; }
 
-        public int numIn { get; set; }
+        public Producto producto { get; set; }  
 
-        public List<Ingrediente> ingrediente { get; set; } = new List<Ingrediente>(){
-            new Ingrediente{id=1, descripcion="Tomate", cantidad=2},
-            new Ingrediente{id=3, descripcion="Pan", cantidad=1}
+        public int numIn;
+
+        public List<Ingrediente> ingrediente = new List<Ingrediente>(){
+            new Ingrediente(),
+            new Ingrediente()
         };
+        
+        public TipoProducto tipoproducto { get; set; } 
 
         public cartaModel()
         {
+            _repoProducto = new RepositorioProducto (new Sator.App.Persistencia.AppContext());
+            _repoIngrediente = new RepositorioIngrediente (new Sator.App.Persistencia.AppContext());
             numIn = 0;
-            producto_list = new List<Producto>(){
+            producto = new Producto();
+            producto_list = _repoProducto.GetAllProductos();
+            /*producto_list = new List<Producto>(){
                 new Producto{id=1, nombre="Papas Fritas", descripcion="Papas con tocineta y queso", tipoproducto= new TipoProducto{id=1, descripcion="Entrada"}, ingrediente= new List<Ingrediente>(){new Ingrediente{id=1, descripcion="Papa", cantidad=1}, new Ingrediente{id=2, descripcion="Queso", cantidad=1}, new Ingrediente{id=3, descripcion="Tocineta", cantidad=1}}},
                 new Producto{id=2, nombre="Gratinado", descripcion="Maiz con queso tocineta", tipoproducto= new TipoProducto{id=2, descripcion="Entrada"}, ingrediente= new List<Ingrediente>(){new Ingrediente{id=4, descripcion="Queso", cantidad=1}, new Ingrediente{id=5, descripcion="Tocineta", cantidad=1}, new Ingrediente{id=6, descripcion="Maiz", cantidad=1}}},
                 new Producto{id=3, nombre="Aros de cebolla", descripcion="Cebolla con queso frita", tipoproducto= new TipoProducto{id=3, descripcion="Entrada"}, ingrediente= new List<Ingrediente>(){new Ingrediente{id=7, descripcion="Cebolla", cantidad=1}, new Ingrediente{id=8, descripcion="Queso", cantidad=1}}}
-            };
+            };*/
         }
 
         public void OnGet()
         {
         }
 
-        public void newIngrediente(){
-            ingrediente.Add(new Ingrediente());
-        }
-
-        /*public IActionResult OnPost(){
+        public IActionResult OnPost()
+        {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            else
-            {
-                _repoIngrediente.AddIngrediente(ingrediente);
+            if (producto.nombre==null)
+            {   
+                return RedirectToPage("../Privacy");
+            }else{
+                return Page();
             }
-            return Page();
-        }*/
+            /*producto.ingrediente = ingrediente;
+            producto.tipoproducto = tipoproducto;
+            _repoProducto.AddProducto(producto);*/
+        }
 
     }
 }

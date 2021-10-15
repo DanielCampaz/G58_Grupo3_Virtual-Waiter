@@ -14,10 +14,15 @@ namespace Sator.App.Consola
         private static IEnumerable<Genero> generos { get; set; }
         private static IEnumerable<Ingrediente> ingredientes { get; set; }
 
+        
+        private static IRepositorioProducto _repoProducto = new RepositorioProducto (new Persistencia.AppContext());
+
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            ListIngrediente();
+            ElimProducto(1);
+            ElimIngrediente(1);
+            ElimIngrediente(2);
         }
         private static void AddGenero(){
             var genero = new Genero
@@ -56,6 +61,14 @@ namespace Sator.App.Consola
         }
         private static void ElimiGenero(Genero genero){
             _repoGenero.DeleteGenero(genero.id);
+        }
+        private static void ElimProducto(int idProducto)
+        {
+            _repoProducto.DeleteProducto(idProducto);
+        }
+        private static void ElimIngrediente(int idIngre)
+        {
+            _repoIngrediente.DeleteIngrediente(idIngre);
         }
     }
 }
